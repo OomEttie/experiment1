@@ -30,6 +30,13 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+        final TextView textViewDetail = root.findViewById(R.id.text_home);
+        homeViewModel.getTextDetail().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                textViewDetail.setText(s);
+            }
+        });
         return root;
     }
 }
